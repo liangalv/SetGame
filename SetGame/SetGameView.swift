@@ -9,15 +9,18 @@ import SwiftUI
 struct SetGameView: View {
     let viewModel: SetGameVM
     var body: some View {
+        VStack{
+            AspectVGrid(items: viewModel.cardsInPlay, aspectRatio: 2/3) {card in
+                CardView().onTapGesture {
+                    print(card.id)
+                }
         
-        AspectVGrid(items: viewModel.cardsInPlay, aspectRatio: 2/3) { card in
-            CardView().onTapGesture {
-                print(card.id)
-    
-            }
+                }
+            Spacer(minLength: 0)
+        }
+        
         }
     }
-}
 
 
 struct CardView: View {

@@ -12,15 +12,12 @@ struct SetGameModel {
     let cards: OrderedDictionary<Int,Card>
     // I need to make this an Array 
     var roster: Array<Card>?
-    var cardsInPlay: OrderedDictionary<Int,Card>{
+    var cardsInPlay: [Card]{
         get{
-            let valueArray = Array(cards.values)
-            
+            Array(cards.values).filter({$0.inPlay == true})
         }
     }
-    //I should make this computed
-    
-    func choose(_ card: Card){
+    mutating func choose(_ card: Card){
         //When we tap a card, we want to copy it to a temporary array while it's in the process of being verified as a set
         
     }

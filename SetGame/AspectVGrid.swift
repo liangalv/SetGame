@@ -10,11 +10,11 @@ import OrderedCollections
 
 
 struct AspectVGrid<Item, ItemView>: View where ItemView: View, Item: Identifiable {
-    var items: OrderedDictionary<Int,Item>
+    var items: [Item]
     var aspectRatio: CGFloat
     var content: (Item) -> ItemView
     
-    init(items: OrderedDictionary<Int,Item>, aspectRatio: CGFloat, @ViewBuilder content: @escaping (Item) -> ItemView) {
+    init(items: [Item], aspectRatio: CGFloat, @ViewBuilder content: @escaping (Item) -> ItemView) {
         self.items = items
         self.aspectRatio = aspectRatio
         self.content = content
@@ -25,7 +25,7 @@ struct AspectVGrid<Item, ItemView>: View where ItemView: View, Item: Identifiabl
             VStack {
                 let width: CGFloat = widthThatFits(itemCount: items.count, in: geometry.size, itemAspectRatio: aspectRatio)
                 LazyVGrid(columns: [adaptiveGridItem(width: width)], spacing: 0) {
-                    ForEach(items.values) { item in
+                    ForEach(items) { item in
                         content(item).aspectRatio(aspectRatio, contentMode: .fit)
                     }
                 }

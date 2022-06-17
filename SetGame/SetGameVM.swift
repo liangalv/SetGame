@@ -14,7 +14,7 @@ class SetGameVM{
     var cards: OrderedDictionary<Int,Card>{
         model.cards
     }
-    var cardsInPlay: OrderedDictionary<Int,Card>{
+    var cardsInPlay: [Card]{
         model.cardsInPlay
     }
 //MARK: - Intents
@@ -36,11 +36,21 @@ class SetGameVM{
                 }
             }
         }
-        generateCardsInPlay()
+        //so we need to modify the struct and pass it back with a new state for the cards in play
+        generateCardsInPlay(for: &cardMap)
         return SetGameModel(cards: cardMap)
     }
-    static private func generateCardsInPlay(){
-        //Iterate over 
+    static private func generateCardsInPlay(for cardMap: inout OrderedDictionary<Int,Card>){
+        //Iterate over the ordered dictionary and set the state of 12 cards to inPlay = true
+        var indexArray:Array<Int> = []
+        for _ in 0..<gameConstants.cardsInPlay{
+            var randomCardID = Int.random(in: 0..<gameConstants.cardsInDeck)
+            while indexArray.contains(randomCardID){
+                randomCardID = Int.random(in: 0..<gameConstants.cardsInDeck)
+            }
+            indexArray.append(randomCardID)
+            cardMap[randomCardID]?.inPlay = true
+        }
         
     }
     
