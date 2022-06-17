@@ -13,6 +13,11 @@ struct SetGameView: View {
             AspectVGrid(items: viewModel.cardsInPlay, aspectRatio: 2/3) {card in
                 CardView(card: card).onTapGesture {
                     print(card.id)
+                    print(card.inPlay)
+                    print(card.colour)
+                    print(card.symbol)
+                    print(card.shading)
+                    print(card.number)
                 }
         
             }
