@@ -8,7 +8,7 @@
 import SwiftUI
 import OrderedCollections
 
-class SetGameVM{
+class SetGameVM: ObservableObject{
     //we need to generate the model here
     private(set) var model = generateModel()
     var cards: OrderedDictionary<Int,Card>{
@@ -16,6 +16,9 @@ class SetGameVM{
     }
     var cardsInPlay: [Card]{
         model.cardsInPlay
+    }
+    var roster: Array<Card>?{
+        model.roster
     }
 //MARK: - Intents
     func choose(_ card: Card){

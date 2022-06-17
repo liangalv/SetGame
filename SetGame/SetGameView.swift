@@ -7,23 +7,28 @@
 
 import SwiftUI
 struct SetGameView: View {
-    let viewModel: SetGameVM
+    @ObservedObject var viewModel: SetGameVM
     var body: some View {
         VStack{
             AspectVGrid(items: viewModel.cardsInPlay, aspectRatio: 2/3) {card in
-                CardView().onTapGesture {
+                CardView(card: card).onTapGesture {
                     print(card.id)
                 }
         
+            }
+            HStack{
+                ForEach(viewModel.roster ?? []){card in
+                    CardView(card: card)
                 }
-            Spacer(minLength: 0)
+            }
         }
         
-        }
     }
+}
 
 
 struct CardView: View {
+    let card: Card
     var body: some View{
         ZStack{
             let shape = RoundedRectangle(cornerRadius: DrawingConstants.rectangleRadius)
