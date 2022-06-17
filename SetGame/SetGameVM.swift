@@ -6,14 +6,15 @@
 //
 
 import SwiftUI
+import OrderedCollections
 
 class SetGameVM{
     //we need to generate the model here
     private(set) var model = generateModel()
-    var cards: Dictionary<Int, Card>{
+    var cards: OrderedDictionary<Int,Card>{
         model.cards
     }
-    var cardsInPlay: Dictionary<Int,Card>{
+    var cardsInPlay: OrderedDictionary<Int,Card>{
         model.cardsInPlay
     }
 //MARK: - Intents
@@ -23,8 +24,7 @@ class SetGameVM{
     
 //MARK: - HELPER FUNCTIONS
     static private func generateModel()->SetGameModel{
-        var cardMap : [Int:Card] = [:]
-        var inPlay : [Int:Card] = [:]
+        var cardMap : OrderedDictionary<Int,Card> = [:]
         var cardCount = 1
         for symbol in Symbol.allCases{
             for colour in Colour.allCases{
@@ -36,16 +36,14 @@ class SetGameVM{
                 }
             }
         }
-        for _ in 0..<gameConstants.cardsInPlay{
-            let randomRange = 0..<gameConstants.cardsInDeck
-            var randomCardID = Int.random(in:randomRange)
-            while cardMap[randomCardID] != nil{
-                randomCardID = Int.random(in: randomRange)
-            }
-            inPlay[randomCardID] = cardMap[randomCardID]
-        }
-        return SetGameModel(cards: cardMap, cardsInPlay: inPlay)
+        generateCardsInPlay()
+        return SetGameModel(cards: cardMap)
     }
+    static private func generateCardsInPlay(){
+        //Iterate over 
+        
+    }
+    
 //MARK: - Constants
     private struct gameConstants {
         static let cardsInPlay = 12

@@ -7,8 +7,15 @@
 
 import SwiftUI
 struct SetGameView: View {
+    let viewModel: SetGameVM
     var body: some View {
-       CardView()
+        
+        AspectVGrid(items: viewModel.cardsInPlay, aspectRatio: 2/3) { card in
+            CardView().onTapGesture {
+                print(card.id)
+    
+            }
+        }
     }
 }
 
@@ -30,7 +37,8 @@ private struct DrawingConstants{
 }
 
 struct SetGameView_Previews: PreviewProvider {
+    static let game = SetGameVM()
     static var previews: some View {
-        SetGameView()
+        SetGameView(viewModel: game)
     }
 }
