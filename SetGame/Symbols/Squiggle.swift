@@ -7,10 +7,10 @@
 
 import SwiftUI
 
-struct Squiggle: Shape{
-    func path(in rect: CGRect) -> Path {
-        <#code#>
-    }
-}
-
+//struct Squiggle: Shape{
+//    func path(in rect: CGRect) -> Path {
+//        <#code#>
+//    }
+//}
+//
 

@@ -39,6 +39,8 @@ struct CardView: View {
             let shape = RoundedRectangle(cornerRadius: DrawingConstants.rectangleRadius)
             shape.padding()
             
+            Diamond().foregroundColor(.cyan).aspectRatio(, contentMode: .fit)
+            
         }
     }
 }

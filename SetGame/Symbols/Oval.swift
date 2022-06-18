@@ -7,10 +7,12 @@
 
 import SwiftUI
 
-struct Oval: Shape{
-    func path(in rect: CGRect) -> Path {
-        <#code#>
-    }
-    
-    
-}
+//struct Oval: Shape{
+//    func path(in rect: CGRect) -> Path {
+//        var p = Path()
+//        let center = CGPoint(x: rect.midX, y: rect.midY)
+//
+//    }
+//
+//
+//}
