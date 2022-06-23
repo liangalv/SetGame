@@ -38,15 +38,15 @@ struct CardView: View {
         ZStack{
             let shape = RoundedRectangle(cornerRadius: DrawingConstants.rectangleRadius)
             shape.padding()
-            
-            Diamond().foregroundColor(.cyan).aspectRatio(, contentMode: .fit)
-            
+            VStack{
+                
+            }
         }
     }
 }
 
 private struct DrawingConstants{
-    static let rectangleRadius: CGFloat = 20
+    static let rectangleRadius: CGFloat = 15
     
 
 }

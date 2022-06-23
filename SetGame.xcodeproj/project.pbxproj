@@ -19,6 +19,7 @@
 		38B338FC285BF56700A8386B /* AspectVGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B338FB285BF56700A8386B /* AspectVGrid.swift */; };
 		38B338FF285D00B600A8386B /* Collections in Frameworks */ = {isa = PBXBuildFile; productRef = 38B338FE285D00B600A8386B /* Collections */; };
 		38B33901285D00B600A8386B /* OrderedCollections in Frameworks */ = {isa = PBXBuildFile; productRef = 38B33900285D00B600A8386B /* OrderedCollections */; };
+		E1B8F38D2864E0B30006F5F6 /* CGPointExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B8F38C2864E0B30006F5F6 /* CGPointExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		38B338F5285BC3BD00A8386B /* SetGameVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetGameVM.swift; sourceTree = "<group>"; };
 		38B338F9285BC8E100A8386B /* SetGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetGameView.swift; sourceTree = "<group>"; };
 		38B338FB285BF56700A8386B /* AspectVGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AspectVGrid.swift; sourceTree = "<group>"; };
+		E1B8F38C2864E0B30006F5F6 /* CGPointExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGPointExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 		38B338E2285BC1F000A8386B /* SetGame */ = {
 			isa = PBXGroup;
 			children = (
+				E1B8F38B2864E0A00006F5F6 /* Extensions */,
 				38321464285D212300A1DA4D /* Symbols */,
 				38B338E3285BC1F000A8386B /* SetGameApp.swift */,
 				38B338F9285BC8E100A8386B /* SetGameView.swift */,
@@ -95,6 +98,14 @@
 				38B338EA285BC1F200A8386B /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		E1B8F38B2864E0A00006F5F6 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E1B8F38C2864E0B30006F5F6 /* CGPointExtensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -181,6 +192,7 @@
 				38321468285D21D000A1DA4D /* Diamond.swift in Sources */,
 				38321466285D215A00A1DA4D /* Oval.swift in Sources */,
 				38B338FC285BF56700A8386B /* AspectVGrid.swift in Sources */,
+				E1B8F38D2864E0B30006F5F6 /* CGPointExtensions.swift in Sources */,
 				38B338FA285BC8E100A8386B /* SetGameView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
